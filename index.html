@@ -40,6 +40,17 @@
   </style>
 </head>
 <body class="font-[Montserrat] bg-gray-50 text-gray-800">
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
 <!-- Contenedor de nieve -->
 <script>
   const snowContainer = document.createElement('div');
@@ -126,7 +137,8 @@
   <div class="absolute inset-0 bg-gradient-to-r from-yellow-500/60 to-black/80"></div>
   <div class="relative z-10 fade-in">
     <h2 class="text-5xl font-bold mb-4">Centro de Diagnóstico Automotor especializado en motocicletas 4T</h2>
-    <p class="text-lg mb-6 max-w-xl mx-auto">Tu seguridad es nuestra prioridad. Realiza tu revisión técnico-mecánica con confianza y respaldo ONAC.</p>
+    <p class="text-lg mb-6 max-w-xl mx-auto">Tu seguridad es nuestra prioridad. Realiza tu revisión técnico-mecánica con confianza, contamos con acreditación ONAC,
+vigente a la fecha, con código de acreditación, 24-CDA-030, bajo la norma NTC-ISO-IEC 17020:2012.</p>
     <a href="https://wa.me/573054890918?text=Hola%2C%20quiero%20agendar%20una%20revisión%20en%20CDA%20Motozone" target="_blank" class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 transition transform hover:scale-105">Agenda tu cita por WhatsApp</a>
     <a href="#ubicacion" class="bg-black text-yellow-400 border border-yellow-400 font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 hover:text-black transition transform hover:scale-105">Cómo llegar al CDA</a>
   </div>
