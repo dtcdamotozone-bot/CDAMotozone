@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CDA Motozone | Centro de Diagnóstico Automotor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-in { animation: fadeIn 1.2s ease-in-out forwards; }
+    @keyframes fadeIn { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
+
+    /* Botón flotante de WhatsApp animado */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float img { width: 36px; height: 36px; }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+  </style>
+</head>
+<body class="font-[Montserrat] bg-gray-50 text-gray-800">
+<!-- Contenedor de nieve -->
+<script>
+  const snowContainer = document.createElement('div');
+  snowContainer.style.position = 'fixed';
+  snowContainer.style.top = 0;
+  snowContainer.style.left = 0;
+  snowContainer.style.width = '100%';
+  snowContainer.style.height = '100%';
+  snowContainer.style.pointerEvents = 'none';
+  snowContainer.style.overflow = 'hidden';
+  snowContainer.style.zIndex = 9999;
+  document.body.appendChild(snowContainer);
+
+  function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.innerHTML = '❄';
+    snowflake.style.position = 'absolute';
+    snowflake.style.color = 'white';
+    snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+    snowflake.style.left = Math.random() * window.innerWidth + 'px';
+    snowflake.style.animation = `fall ${Math.random() * 5 + 5}s linear infinite`;
+    snowContainer.appendChild(snowflake);
+    setTimeout(() => snowflake.remove(), 10000);
+  }
+
+  // Generar copos de nieve cada 200 ms
+  setInterval(createSnowflake, 200);
+</script>
+
+<style>
+  @keyframes fall { 
+    to { 
+      transform: translateY(100vh); 
+      opacity: 0; 
+    } 
+  }
+</style>
+
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full bg-black shadow-md z-50">
+    <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4 text-yellow-400">
+      <div class="flex items-center space-x-3">
+        <img src="img/logo-cda.png" alt="Logo CDA Motozone" class="w-20 h-auto drop-shadow-lg animate-bounce">
+
+        <h1 class="text-2xl font-bold">CDA Motozone</h1>
+      </div>
+      <ul class="hidden md:flex space-x-6 font-medium">
+        <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+        <li><a href="#servicios" class="hover:text-white transition">Servicios</a></li>
+        <li><a href="#nosotros" class="hover:text-white transition">Nosotros</a></li>
+        <li><a href="#campanas" class="hover:text-white transition">Campañas</a></li>
+        <li><a href="#encuesta" class="hover:text-white transition">Encuesta</a></li>
+        <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
+        <li><a href="#ubicacion" class="hover:text-white transition">Ubicación</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  
+<section id="inicio" class="h-screen flex flex-col justify-center items-center text-center text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-[url('img/fondo-moto.jpg')] bg-cover bg-center"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-yellow-500/60 to-black/80"></div>
+  <div class="relative z-10 fade-in">
+    <h2 class="text-5xl font-bold mb-4">Centro de Diagnóstico Automotor especializado en motocicletas 4T</h2>
+    <p class="text-lg mb-6 max-w-xl mx-auto">Tu seguridad es nuestra prioridad. Realiza tu revisión técnico-mecánica con confianza y respaldo ONAC.</p>
+    <a href="https://wa.me/573054890918?text=Hola%2C%20quiero%20agendar%20una%20revisión%20en%20CDA%20Motozone" target="_blank" class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 transition transform hover:scale-105">Agenda tu cita por WhatsApp</a>
+    <a href="#ubicacion" class="bg-black text-yellow-400 border border-yellow-400 font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 hover:text-black transition transform hover:scale-105">Cómo llegar al CDA</a>
+  </div>
+</section>
+
+  <!-- Sección Nosotros -->
+  <section id="nosotros" class="bg-gray-100 py-20 fade-in">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold text-black mb-8">Nosotros</h3>
+      <p class="text-gray-700 max-w-3xl mx-auto mb-10">En <strong>CDA Motozone</strong> trabajamos bajo un sistema de gestión de calidad enfocado en la satisfacción del cliente y el cumplimiento de las normas técnicas y legales aplicables. Nos especializamos en la revisión técnico-mecánica de motocicletas 4T, brindando confianza, seguridad y compromiso con la movilidad sostenible.</p>
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+          <h4 class="text-xl font-semibold text-yellow-500 mb-3 text-center">Misión</h4>
+          <p>Brindar servicios de revisión técnico-mecánica y de emisiones contaminantes a motocicletas 4T, asegurando el cumplimiento de los requisitos legales y técnicos, promoviendo la seguridad vial, la protección ambiental y la satisfacción de nuestros clientes.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+          <h4 class="text-xl font-semibold text-yellow-500 mb-3 text-center">Visión</h4>
+          <p>Ser reconocidos a nivel regional como un centro de diagnóstico automotor líder en calidad, innovación y servicio, comprometido con la mejora continua y la seguridad vial de los motociclistas.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+          <h4 class="text-xl font-semibold text-yellow-500 mb-3 text-center">Política de Calidad</h4>
+          <p>En CDA Motozone garantizamos servicios confiables, oportunos y transparentes, cumpliendo con los estándares de calidad, requisitos legales y la mejora continua de nuestros procesos para la satisfacción de nuestros clientes.</p>
+        </div>
+      </div>
+      <div class="mt-10 bg-yellow-50 p-6 rounded-2xl shadow-inner">
+        <h4 class="text-2xl font-semibold text-black mb-4">Objetivos de Calidad</h4>
+        <ul class="list-disc text-left max-w-2xl mx-auto text-gray-700 space-y-2">
+          <li>Garantizar el cumplimiento de los requisitos normativos y legales aplicables.</li>
+          <li>Fortalecer la competencia del personal mediante la formación continua.</li>
+          <li>Mejorar la satisfacción del cliente a través de un servicio eficiente y confiable.</li>
+          <li>Promover la seguridad vial y el cuidado ambiental en cada servicio realizado.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Sección Campañas -->
+  <section id="campanas" class="max-w-6xl mx-auto py-20 px-6 fade-in bg-white">
+    <h3 class="text-3xl font-bold text-center mb-10 text-black">Campañas de Seguridad Vial</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <img src="https://cdn.pixabay.com/photo/2020/08/28/16/20/motorcycle-5524822_1280.jpg" alt="Seguridad Vial" class="w-full h-40 object-cover rounded-xl mb-3">
+        <h4 class="text-xl font-semibold mb-3 text-yellow-500">Uso del Casco Seguro</h4>
+        <p>Promovemos el uso correcto del casco certificado y la protección personal para motociclistas.</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <img src="https://cdn.pixabay.com/photo/2016/11/18/16/10/motorbike-1836900_1280.jpg" alt="Campaña Ambiental" class="w-full h-40 object-cover rounded-xl mb-3">
+        <h4 class="text-xl font-semibold mb-3 text-yellow-500">Cuidado del Medio Ambiente</h4>
+        <p>Campañas sobre el control de emisiones contaminantes y mantenimiento preventivo responsable.</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <img src="https://cdn.pixabay.com/photo/2017/07/02/22/02/motorcycle-2468311_1280.jpg" alt="Conducción Segura" class="w-full h-40 object-cover rounded-xl mb-3">
+        <h4 class="text-xl font-semibold mb-3 text-yellow-500">Conducción Segura</h4>
+        <p>Charlas educativas para crear conciencia sobre los riesgos y la prevención de accidentes de tránsito.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Servicios -->
+  <section id="servicios" class="max-w-6xl mx-auto py-20 px-6 fade-in">
+    <h3 class="text-3xl font-bold text-center mb-10 text-black">Nuestros Servicios</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1">
+        <img src="https://cdn.pixabay.com/photo/2017/03/21/20/13/motorcycle-2167188_1280.jpg" alt="Moto revisión" class="w-full h-40 object-cover rounded-xl mb-3">
+        <h4 class="text-xl font-semibold mb-3 text-yellow-500">Revisión Técnico-Mecánica</h4>
+        <p>Diagnóstico completo de motocicletas 4T según normatividad vigente del Ministerio de Transporte y ONAC.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1">
+        <img src="https://cdn.pixabay.com/photo/2016/11/19/15/39/motorcycle-1836914_1280.jpg" alt="Inspección de gases" class="w-full h-40 object-cover rounded-xl mb-3">
+        <h4 class="text-xl font-semibold mb-3 text-yellow-500">Inspección de Gases</h4>
+        <p>Verificamos los niveles de emisión de gases para garantizar un ambiente más limpio y sostenible.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1">
+        <img src="https://cdn.pixabay.com/photo/2017/08/07/11/27/motorcycle-2607085_1280.jpg" alt="Certificación digital" class="w-full h-40 object-cover rounded-xl mb-3">
+        <h4 class="text-xl font-semibold mb-3 text-yellow-500">Certificación Digital</h4>
+        <p>Entrega de resultados y certificados en formato digital con validación directa en el RUNT.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Encuesta -->
+  <section id="encuesta" class="max-w-5xl mx-auto py-20 px-6 fade-in">
+    <h3 class="text-3xl font-bold text-center mb-8 text-black">Encuesta de Satisfacción y PQRS</h3>
+    <p class="text-center mb-10 text-gray-600">Tu opinión nos ayuda a mejorar nuestros servicios. En CDA Motozone tomamos en serio tus comentarios, quejas, apelaciones o felicitaciones. Conoce el procedimiento completo en nuestro documento <a href="#" class="text-yellow-500 font-semibold hover:underline">GQ-P-01 PROCEDIMIENTO QUEJAS Y APELACIONES</a>.</p>
+    <form class="bg-white rounded-2xl shadow-md p-8 space-y-6" action="https://formsubmit.co/dtcdamotozone@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://cdamotozone.co/agradecimiento.html">
+      <input type="hidden" name="_captcha" value="false">
+      <div>
+        <label class="block font-semibold mb-2">Nombre completo</label>
+        <input type="text" name="nombre" class="w-full border rounded-lg p-3" required />
+      </div>
+      <div>
+        <label class="block font-semibold mb-2">Correo electrónico</label>
+        <input type="email" name="email" class="w-full border rounded-lg p-3" required />
+      </div>
+      <div>
+        <label class="block font-semibold mb-2">Tipo de comentario</label>
+        <select name="tipo" class="w-full border rounded-lg p-3">
+          <option>Felicitación</option>
+          <option>Queja</option>
+          <option>Apelación</option>
+          <option>Sugerencia</option>
+        </select>
+      </div>
+      <div>
+        <label class="block font-semibold mb-2">Mensaje</label>
+        <textarea name="mensaje" rows="5" class="w-full border rounded-lg p-3" required></textarea>
+      </div>
+      <button type="submit" class="bg-yellow-500 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-400 transition transform hover:scale-105">Enviar Encuesta</button>
+    </form>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="bg-black text-yellow-400 py-20 fade-in">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6">
+      <div>
+        <h3 class="text-3xl font-bold mb-6">Contáctanos</h3>
+        <p class="mb-4">📍 Dirección: <a href="https://www.google.com/maps/place/Revisión+Técnico+Mecánica+CDA+MOTOZONE/@1.8491224,-76.0492038,18z/data=!4m14!1m7!3m6!1s0x8e250b003b44e485:0x875cd2c5e42c1e01!2sRevisión+Técnico+Mecánica+CDA+MOTOZONE!8m2!3d1.8489964!4d-76.0481792!16s%2Fg%2F11y48cgzlh!3m5!1s0x8e250b003b44e485:0x875cd2c5e42c1e01!8m2!3d1.8489964!4d-76.0481792!16s%2Fg%2F11y48cgzlh?authuser=0" target="_blank" class="text-white hover:underline">RXX2+HP Pitalito, Huila</a></p>
+        <p class="mb-4">📞 WhatsApp: <a href="https://wa.me/573054890918" class="text-white hover:underline" target="_blank">305 489 0918</a></p>
+        <p class="mb-4">✉️ Correo: <a href="mailto:dtcdamotozone@gmail.com" class="text-white hover:underline">dtcdamotozone@gmail.com</a></p>
+        <p class="mb-4">🕒 Horario: Lunes a Sábado de 8:00 a.m. a 6:00 p.m.</p>
+      </div>
+      <div>
+        <iframe class="w-full h-64 rounded-xl shadow-md" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.064118813708!2d-76.0492038!3d1.8491224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e250b003b44e485%3A0x875cd2c5e42c1e01!2sRevisión%20Técnico%20Mecánica%20CDA%20MOTOZONE!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Cómo llegar -->
+  <section id="ubicacion" class="bg-gray-100 py-20 fade-in">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold text-black mb-6">Cómo llegar al CDA Motozone</h3>
+      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Encuéntranos fácilmente en Pitalito, Huila. Usa el mapa interactivo o sigue las indicaciones desde tu ubicación actual.</p>
+      <iframe class="w-full h-96 rounded-2xl shadow-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.064118813708!2d-76.0492038!3d1.8491224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e250b003b44e485%3A0x875cd2c5e42c1e01!2sRevisión%20Técnico%20Mecánica%20CDA%20MOTOZONE!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" allowfullscreen loading="lazy"></iframe>
+      <div class="mt-8">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Revisión+Técnico+Mecánica+CDA+MOTOZONE,Pitalito+Huila" target="_blank" class="bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition transform hover:scale-105">Ver ruta en Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/573054890918?text=Hola%2C%20quiero%20agendar%20una%20revisión%20en%20CDA%20Motozone" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-500 text-black text-center py-6">
+    <div class="flex justify-center items-center space-x-3">
+      <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="Logo CDA Motozone" class="w-8 h-8 rounded-full border border-black">
+      <p>© 2025 CDA Motozone | Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('section', { duration: 1200, distance: '50px', easing: 'ease-out', origin: 'bottom', reset: false });
+  </script>
+</body>
+</html>
+
+
