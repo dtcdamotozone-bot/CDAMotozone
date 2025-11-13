@@ -50,16 +50,6 @@ footer img {
 </head>
 <body class="font-[Montserrat] bg-gray-50 text-gray-800">
 
-<script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
-
-
 <!-- Contenedor de nieve -->
 <script>
   const snowContainer = document.createElement('div');
@@ -128,7 +118,7 @@ footer img {
   </nav>
 
   <!-- Menú desplegable móvil -->
-  <div id="mobile-menu" class="hidden bg-black md:hidden flex-col text-center space-y-4 py-6 text-yellow-400 border-t border-yellow-500">
+  <div id="mobile-menu" class="hidden bg-black md:hidden flex-col text-center space-y-4 py-6 text-yellow-400 border-t border-yellow-500 animate-slideDown">
     <a href="#inicio" class="block hover:text-white transition">Inicio</a>
     <a href="#servicios" class="block hover:text-white transition">Servicios</a>
     <a href="#nosotros" class="block hover:text-white transition">Nosotros</a>
@@ -137,6 +127,41 @@ footer img {
     <a href="#contacto" class="block hover:text-white transition">Contacto</a>
   </div>
 </header>
+
+<!-- Script para desplegar el menú con animación -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('fade-in');
+    } else {
+      mobileMenu.classList.add('fade-out');
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('fade-out');
+      }, 300);
+    }
+  });
+</script>
+
+<!-- Animación CSS -->
+<style>
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .fade-out {
+    animation: slideDown 0.3s ease reverse forwards;
+  }
+</style>
 
 
   <!-- Hero Section -->
@@ -305,11 +330,18 @@ vigente a la fecha, con código de acreditación, 24-CDA-030, bajo la norma NTC-
   </div>
 </footer>
 
-
   <script>
     ScrollReveal().reveal('section', { duration: 1200, distance: '50px', easing: 'ease-out', origin: 'bottom', reset: false });
   </script>
+  
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 </body>
 </html>
-
 
