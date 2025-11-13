@@ -80,24 +80,44 @@
 
 
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full bg-black shadow-md z-50">
-    <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4 text-yellow-400">
-      <div class="flex items-center space-x-3">
-        <img src="img/logo-cda.png" alt="Logo CDA Motozone" class="w-20 h-auto drop-shadow-lg animate-bounce">
+  <!-- Navbar responsive -->
+<header class="fixed top-0 left-0 w-full bg-black shadow-md z-50">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4 text-yellow-400">
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <img src="img/logo-cda.png" alt="Logo CDA Motozone" class="w-12 h-auto drop-shadow-lg animate-bounce">
+      <h1 class="text-2xl font-bold">CDA Motozone</h1>
+    </div>
 
-        <h1 class="text-2xl font-bold">CDA Motozone</h1>
-      </div>
-      <ul class="hidden md:flex space-x-6 font-medium">
-        <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
-        <li><a href="#servicios" class="hover:text-white transition">Servicios</a></li>
-        <li><a href="#nosotros" class="hover:text-white transition">Nosotros</a></li>
-        <li><a href="#campanas" class="hover:text-white transition">Campañas</a></li>
-        <li><a href="#encuesta" class="hover:text-white transition">Encuesta</a></li>
-        <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
-        <li><a href="#ubicacion" class="hover:text-white transition">Ubicación</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button id="menu-btn" class="block md:hidden focus:outline-none">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <!-- Menú principal -->
+    <ul id="menu" class="hidden md:flex space-x-6 font-medium">
+      <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+      <li><a href="#servicios" class="hover:text-white transition">Servicios</a></li>
+      <li><a href="#nosotros" class="hover:text-white transition">Nosotros</a></li>
+      <li><a href="#campanas" class="hover:text-white transition">Campañas</a></li>
+      <li><a href="#encuesta" class="hover:text-white transition">Encuesta</a></li>
+      <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Menú desplegable móvil -->
+  <div id="mobile-menu" class="hidden bg-black md:hidden flex-col text-center space-y-4 py-6 text-yellow-400 border-t border-yellow-500">
+    <a href="#inicio" class="block hover:text-white transition">Inicio</a>
+    <a href="#servicios" class="block hover:text-white transition">Servicios</a>
+    <a href="#nosotros" class="block hover:text-white transition">Nosotros</a>
+    <a href="#campanas" class="block hover:text-white transition">Campañas</a>
+    <a href="#encuesta" class="block hover:text-white transition">Encuesta</a>
+    <a href="#contacto" class="block hover:text-white transition">Contacto</a>
+  </div>
+</header>
+
 
   <!-- Hero Section -->
   
