@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CDA Motozone | Centro de Diagnóstico Automotor para motocicletas 4T en Pitalito, Huila. Revisión Técnico-Mecánica certificada por ONAC.">
   <title>CDA Motozone | Centro de Diagnóstico Automotor</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -130,13 +131,26 @@ footer img {
     <a href="#encuesta" class="block hover:text-white transition">Encuesta</a>
     <a href="#contacto" class="block hover:text-white transition">Contacto</a>
   </div>
+  
+  <!-- Meta-Etiquetas -->
+  <meta name="description" content="CDA Motozone en Pitalito, Huila. Especialistas en revisión técnico-mecánica de motocicletas 4T. Certificados ONAC. Agenda tu cita y garantiza tu seguridad vial."/>  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CDA Motozone | Revisión Técnico-Mecánica Motos 4T Certificada"/>
+  <meta property="og:description" content="Tu CDA de confianza en Pitalito. Rapidez, calidad y el mejor servicio para tu motocicleta. ¡Agenda tu RTM ahora!"/>  
+  <meta property="og:image" content="https://dtcdamotozone-bot.github.io/CDAMotozone/img/logo-cda.png"/>   
+  <meta property="og:url" content="https://dtcdamotozone-bot.github.io/CDAMotozone/"/>   
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TuUsuarioTwitter">
+  
 </header>
 
 <!-- Script para desplegar el menú con animación -->
 <script>
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = mobileMenu.querySelectorAll('a'); // Selecciona todos los enlaces
 
+  // Función para alternar el menú (abrir/cerrar al hacer clic en el botón)
   menuBtn.addEventListener('click', () => {
     if (mobileMenu.classList.contains('hidden')) {
       mobileMenu.classList.remove('hidden');
@@ -148,6 +162,18 @@ footer img {
         mobileMenu.classList.remove('fade-out');
       }, 300);
     }
+  });
+
+  // NUEVA FUNCIÓN: Cerrar el menú después de hacer clic en un enlace
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Usa la misma lógica de cierre que el botón, activando la animación 'fade-out'
+      mobileMenu.classList.add('fade-out');
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('fade-out');
+      }, 300);
+    });
   });
 </script>
 
@@ -185,7 +211,7 @@ footer img {
 <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
 
   <!-- Botón WhatsApp -->
-  <a href="https://wa.me/573024890918?text=Hola%2C%20quiero%20agendar%20una%20revisión%20en%20CDA%20Motozone"
+  <a href="https://wa.me/573054890918?text=Hola%2C%20quiero%20agendar%20una%20revisión%20en%20CDA%20Motozone"
      target="_blank"
      class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 transition transform hover:scale-105 text-center w-full md:w-auto">
      Agenda tu cita por WhatsApp
@@ -316,7 +342,7 @@ footer img {
       <div>
         <h3 class="text-3xl font-bold mb-6">Contáctanos</h3>
         <p class="mb-4">📍 Dirección: <a href="https://www.google.com/maps/place/Revisión+Técnico+Mecánica+CDA+MOTOZONE/@1.8491224,-76.0492038,18z/data=!4m14!1m7!3m6!1s0x8e250b003b44e485:0x875cd2c5e42c1e01!2sRevisión+Técnico+Mecánica+CDA+MOTOZONE!8m2!3d1.8489964!4d-76.0481792!16s%2Fg%2F11y48cgzlh!3m5!1s0x8e250b003b44e485:0x875cd2c5e42c1e01!8m2!3d1.8489964!4d-76.0481792!16s%2Fg%2F11y48cgzlh?authuser=0" target="_blank" class="text-white hover:underline">Calle 2 # 3-44 Pitalito, Huila</a></p>
-        <p class="mb-4">📞 WhatsApp: <a href="https://wa.me/573024890918" class="text-white hover:underline" target="_blank">302 489 0918</a></p>
+        <p class="mb-4">📞 WhatsApp: <a href="https://wa.me/573054890918" class="text-white hover:underline" target="_blank">305 489 0918</a></p>
         <p class="mb-4">✉️ Correo: <a href="mailto:dtcdamotozone@gmail.com" class="text-white hover:underline">dtcdamotozone@gmail.com</a></p>
         <p class="mb-4">🕒 Horario: Lunes a Sábado de 7:00 a.m. a 6:00 p.m.</p>
       </div>
@@ -339,7 +365,7 @@ footer img {
   </section>
 
   <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/573024890918?text=Hola%2C%20quiero%20agendar%20una%20revisión%20en%20CDA%20Motozone" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <a href="https://wa.me/573054890918?text=Hola%2C%20quiero%20agendar%20una%20revisión%20en%20CDA%20Motozone" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
@@ -368,5 +394,4 @@ footer img {
 </script>
 </body>
 </html>
-
 
