@@ -1,0 +1,57 @@
+/* ❄️ Estilo base del copo de nieve */
+.snowflake {
+    color: #fff;
+    font-size: 1.2em;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    top: -10px;
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.9;
+    animation: fall linear infinite;
+    filter: drop-shadow(0 0 3px rgba(255,255,255,0.8));
+}
+
+/* ❄️ Movimiento más natural */
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) translateX(0);
+    }
+    100% {
+        transform: translateY(110vh) translateX(20px);
+    }
+}
+
+/* ❄️ Efecto de nieve solo en pantallas grandes */
+@media (max-width: 480px) {
+    .snowflake {
+        display: none;
+    }
+}
+/* 🎅 Santa en moto cruzando la pantalla */
+.santa-moto {
+    position: fixed;
+    bottom: 20px;
+    left: -200px; /* empieza fuera de la pantalla */
+    width: 150px;
+    z-index: 99999;
+    animation: santaRide 12s linear infinite;
+    pointer-events: none;
+}
+
+/* Animación */
+@keyframes santaRide {
+    0% {
+        transform: translateX(-200px) rotateY(0deg);
+    }
+    50% {
+        transform: translateX(calc(100vw + 200px)) rotateY(0deg);
+    }
+    51% {
+        transform: translateX(calc(100vw + 200px)) rotateY(180deg);
+    }
+    100% {
+        transform: translateX(-200px) rotateY(180deg);
+    }
+}
