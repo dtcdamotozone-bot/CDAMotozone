@@ -23,12 +23,7 @@
     }
 }
 
-/* ❄️ Efecto de nieve solo en pantallas grandes */
-@media (max-width: 480px) {
-    .snowflake {
-        display: none;
-    }
-}
+
 /* 🎅 Santa en moto cruzando la pantalla */
 .santa-moto {
     position: fixed;
@@ -55,3 +50,4 @@
         transform: translateX(-200px) rotateY(180deg);
     }
 }
+
