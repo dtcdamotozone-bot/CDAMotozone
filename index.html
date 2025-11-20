@@ -125,7 +125,15 @@
        class="bg-yellow-500 text-black font-bold px-8 py-3 rounded-full hover:bg-yellow-400 transition transform hover:scale-105 inline-block">
       Cómo llegar
 </a>
-        <a href="https://wa.me/573024890918?text=Hola%2C%20quiero%20agendar%20una%20revisi%C3%B3n%20en%20CDA%20Motozone" target="_blank" class="border-2 border-yellow-500 text-yellow-500 font-bold px-8 py-3 rounded-full hover:bg-yellow-500 hover:text-black transition transform hover:scale-105 inline-block">Agenda tu cita</a>
+<a href="https://wa.me/573024890918?text=Hola%2C%20quiero%20agendar%20una%20revisi%C3%B3n%20en%20CDA%20Motozone"
+   target="_blank"
+   class="border-2 border-yellow-500 text-yellow-500 font-bold px-8 py-3 rounded-full hover:bg-yellow-500 hover:text-black transition transform hover:scale-105 inline-block"
+   onclick="gtag('event', 'cita_whatsapp', {
+       event_category: 'conversion',
+       event_label: 'Agenda tu cita - WhatsApp'
+   });">
+    Agenda tu cita
+</a>
       </div>
     </div>
   </section>
@@ -363,10 +371,33 @@
     </div>
   </section>
      
-  <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/573024890918?text=Hola%2C%20quiero%20agendar%20una%20revisi%C3%B3n%20en%20CDA%20Motozone" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <!-- Botón flotante WhatsApp evento GA4 -->
+<a href="https://wa.me/573024890918?text=Hola%2C%20quiero%20agendar%20una%20revisi%C3%B3n%20en%20CDA%20Motozone"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="WhatsApp"
+   onclick="gtag('event', 'cita_whatsapp', {
+       event_category: 'conversion',
+       event_label: 'Agendar cita WhatsApp'
+   });">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
+</a>
+
+<!-- SEO LOCAL CDA MOTOZONE -->
+<section style="display:none;">
+    <h2>Revisión técnico-mecánica de motos en Pitalito</h2>
+    <p>
+        En CDA Motozone ofrecemos la revisión técnico-mecánica para motos 2T y 4T en Pitalito,
+        cumpliendo con los estándares del Ministerio de Transporte y la acreditación ONAC.
+        Somos un Centro de Diagnóstico Automotor autorizado, ideal para quienes buscan un
+        CDA para motos 4T en Pitalito o desean realizar su RTM de manera rápida y confiable.
+    </p>
+    <p>
+        Si buscas “RTM motos cerca de mí”, CDA Motozone es tu mejor opción en Pitalito gracias a 
+        nuestro servicio ágil, profesional y orientado a la seguridad vial.
+    </p>
+</section>
+<!-- FIN SEO LOCAL -->
 
 <!-- Footer -->
 <footer class="bg-yellow-500 text-black text-center py-6">
